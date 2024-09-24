@@ -99,9 +99,7 @@ export default function page() {
                             In-presence partecipants can ask questions during the Event at our Speakers. • Online participants cannot interact directly with speakers. If you have a question, you must submit it in the chat. It is permitted to use the microphone and camera upon request in chat and authorization from a moderator.
                             </AccordionDetails>
                         </Accordion>
-
                     </div>
-
                 </div>
             </div>
         </div>
