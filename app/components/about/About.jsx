@@ -9,8 +9,8 @@ import React from 'react'
 const About = () => {
   return (
     <section id='about'>
-    <div className="flex flex-col justify-center md:m-10">
-      <h1 className="text-6xl font-bold text-center mt-5 text-[#353A3F]">About</h1>
+    <div className="flex flex-col justify-center md:m-10 p-4">
+      <h1 className="text-6xl font-bold text-center text-[#353A3F]">About</h1>
       <div className="m-3 md:mx-48">
         <span className='font-bold'>Welcome to the Qiskit Fall Fest 2024 / Catania</span>
         <div>We are thrilled to invite you to the most exciting global event about quantum computing promoted by IBM Quantum and the Qiskit community: the Qiskit Fall Fest!</div>
@@ -27,44 +27,51 @@ const About = () => {
             We are looking forward to seeing you at the event!
           </p>
         </div>
-        <div id="about-buttons" className="flex justify-evenly gap-5 mt-5">
-          <div id="info-button" className='flex flex-col justify-center items-center text-center'>
-            <IconButton >
-                <Info sx={{ fontSize: 60, color: '#9D5CFD' }}></Info>
-            </IconButton>
-            <h3 className='font-bold text-2xl'>What is Qiskit?</h3>
-            <span>An open-source python framework for quantum programming</span>
-
-            <Link href={''} className='hover:underline text-[#9D5CFD] mt-5'> Learn more </Link> 
-          </div>
-          <div id="calendar-button" className='flex flex-col justify-center items-center text-center'>
-            <IconButton >
-                <Calendar sx={{ fontSize: 60, color: '#9D5CFD'  }}></Calendar>
-            </IconButton>
-            <h3 className='font-bold text-2xl'>Calendar</h3>
-            <span>Check out the agenda for the event</span>
-            <Link href={''} className='hover:underline text-[#9D5CFD] mt-5'> View the calendar </Link> 
-          </div>
-          <div id="location-button" className='flex flex-col justify-center items-center text-center'>
-            <IconButton >
-                <Location sx={{ fontSize: 60, color: '#9D5CFD'  }}></Location>
-            </IconButton>
-            <h3 className='font-bold text-2xl'>Location</h3>
-            <span>Learn more about our event location in detail</span>
-            <Link href={''} className='hover:underline text-[#9D5CFD] mt-5'> Find us </Link> 
-          </div>
-          <div id="FAQ-button" className='flex flex-col justify-center items-center text-center'>
-            <IconButton >
-                <Question sx={{ fontSize: 60, color: '#9D5CFD'  }}></Question>
-            </IconButton>
-            <h3 className='font-bold text-2xl'>FAQ</h3>
-            <span>Have some question? Maybe we have already answer it!</span>
-            <Link href={''} className='hover:underline text-[#9D5CFD] mt-5'> FAQ </Link> 
-          </div>
+        <div id="about-buttons" className="flex flex-wrap justify-evenly gap-5 mt-5">
+        {/* Pulsante Info */}
+        <div id="info-button" className="flex flex-col  justify-between items-center text-center w-full sm:w-1/2 lg:w-1/6">
+          <IconButton>
+            <Info sx={{ fontSize: 60, color: '#9D5CFD' }}></Info>
+          </IconButton>
+          <h3 className="font-bold text-2xl">What is Qiskit?</h3>
+          <span>An open-source python framework for quantum programming</span>
+          <Link href={'/qiskit'} className="hover:underline text-[#9D5CFD] mt-5"> Learn more </Link>
         </div>
+
+        {/* Pulsante Calendario */}
+        <div id="calendar-button" className="flex flex-col  justify-between items-center text-center w-full sm:w-1/2 lg:w-1/6">
+          <IconButton>
+            <Calendar sx={{ fontSize: 60, color: '#9D5CFD' }}></Calendar>
+          </IconButton>
+          <h3 className="font-bold text-2xl">Calendar</h3>
+          <span>Check out the agenda for the event</span>
+          <Link href={'#schedule'} className="hover:underline text-[#9D5CFD] mt-5"> View the calendar </Link>
+        </div>
+
+        {/* Pulsante Location */}
+        <div id="location-button" className="flex flex-col  justify-between items-center text-center w-full sm:w-1/2 lg:w-1/6">
+          <IconButton>
+            <Location sx={{ fontSize: 60, color: '#9D5CFD' }}></Location>
+          </IconButton>
+          <h3 className="font-bold text-2xl">Location</h3>
+          <span>Learn more about our event location in detail</span>
+          <Link href={'#location'} className="hover:underline text-[#9D5CFD] mt-5"> Find us </Link>
+        </div>
+
+        {/* Pulsante FAQ */}
+        <div id="FAQ-button" className="flex flex-col justify-between items-center text-center w-full sm:w-1/2 lg:w-1/6">
+          <IconButton>
+            <Question sx={{ fontSize: 60, color: '#9D5CFD' }}></Question>
+          </IconButton>
+          <h3 className="font-bold text-2xl">FAQ</h3>
+          <span>Have some question? Maybe we have already answered it!</span>
+          <Link href={'/faq'} className="hover:underline text-[#9D5CFD] mt-5"> FAQ </Link>
+        </div>
+      </div>
+
         <div className='flex justify-center'>
-            <div id='register button' className=' bg-[#9D5CFD] hover:bg-[#924afc] text-white rounded text-center text-2xl font-bold mt-5 flex justify-center w-[40%] p-5'>
-                <button> Register here to partecipate!
+            <div id='register button' className=' bg-[#9D5CFD] hover:bg-[#924afc] text-white rounded text-center text-2xl font-bold mt-5 flex justify-center md:w-[40%] p-5'>
+                <button> <Link href={'https://www.eventbrite.com/e/catania-qiskit-fall-fest-tickets-1029219452087'}>Register here to partecipate!</Link>
                 </button>
             </div>
         </div>

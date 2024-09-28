@@ -8,52 +8,31 @@ import Location from "./components/location/Location";
 import './style.css'
 import Footer from "./components/footer/Footer";
 import Organizers from "./components/organizers/Organizers";
+import Sponsors from "./sponsors/Sponsors";
+import Link from "next/link";
+
 
 export default function Home() {
   return (
     <div>
       <Navbar />
       <section id="welcome" className="flex justify-center">
-        <div className="relative top-64 flex flex-col justify-center items-center font-bold h-[40%] w-[50%] bg-white/60 backdrop-blur-lg border border-white/20 shadow-lg rounded-lg p-6 ">
-          <span className="md:text-3xl text-[#9D5CFD]">Qiskit Fall Fest is coming in Catania.</span>
-          <h1 className="text-3xl md:text-6xl text-[#353A3F] text-center">Get ready for Quantum with us!</h1>
-          <button className="md:text-xl mt-3 p-5 text-[#353A3F] rounded bg-[#FF7EB5] hover:bg-[#f55fa0] hover:text-white">Get the ticket!</button>
+        <div className="relative top-1/3 flex flex-col justify-center items-center font-bold h-[35%] w-[60%] bg-white/60 backdrop-blur-lg border border-white/20 shadow-lg rounded-lg p-6 ">
+          <span className="md:text-lg lg:text-3xl 2xl:text-4xl text-[#9D5CFD] md:m-5 text-center ">Qiskit Fall Fest landing in Catania.</span>
+          <h1 className="text-3xl md:text-3xl lg:text-5xl 2xl:text-6xl text-[#353A3F] text-center ">Get ready for Quantum with us!</h1>
+          <button className="bg-[#9D5CFD] hover:bg-[#924afc] text-white rounded text-center text-lg md:text-2xl font-bold mt-5 flex justify-center md:w-[30%] p-5"><Link href={'https://www.eventbrite.com/e/catania-qiskit-fall-fest-tickets-1029219452087'}>Get the ticket!</Link></button>
         </div>
       </section>
+      
       <About />
       <Partners />
       <Speakers />
       <Agenda/>
       <Location />
       <Organizers/>
-    
-      <section id='poster'>
-        <div className="flex flex-col justify-center md:m-10">
-          <h1 className="text-4xl font-bold text-center">Poster</h1>
-        </div>
-      </section>
-      <section id='gallery'>
-        <div className="flex flex-col justify-center md:m-10">
-          <h1 className="text-4xl font-bold text-center">Gallery</h1>
-        </div>  
-      </section>
-      <section id='collaborators'>
-        <div className="flex flex-col justify-center md:m-10">
-          <h1 className="text-4xl font-bold text-center">Collaborators</h1>
-        </div> 
-      </section>
-      <section id='sponsors'>
-        <div className="flex flex-col justify-center md:m-10">
-          <h1 className="text-4xl font-bold text-center">Sponsors</h1>
-        </div> 
-      </section>
-      <section id='press'>
-        <div className="flex flex-col justify-center md:m-10">
-          <h1 className="text-4xl font-bold text-center">Press</h1>
-        </div> 
-      </section>
+      {/* <Sponsors /> */}
+      <Footer/>
 
-    <Footer/>
     </div>
   );
 }
