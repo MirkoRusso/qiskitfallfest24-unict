@@ -74,7 +74,12 @@ const Navbar = () => {
       router.push('/'); // Naviga alla pagina principale
     }
     setActiveLink(sectionId); // Imposta il link attivo
+    setIsOpen(false);
   };
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  }
 
   return (
     <div
@@ -132,10 +137,10 @@ const Navbar = () => {
             <a href="#schedule" onClick={() => handleSectionClick('#schedule')}>Schedule</a>
           </li>
           <li className={getLinkClass('/faq')}>
-            <Link href="/faq">FAQ</Link>
+            <Link href="/faq" onClick={handleLinkClick}>FAQ</Link>
           </li>
           <li className={getLinkClass('#register')}>
-            <Link href={'https://www.eventbrite.com/e/catania-qiskit-fall-fest-tickets-1029219452087'}>Register</Link>
+            <Link href={'https://www.eventbrite.com/e/catania-qiskit-fall-fest-tickets-1029219452087'} onClick={handleLinkClick} >Register</Link>
           </li>
         </ul>
       </div>
@@ -145,8 +150,37 @@ const Navbar = () => {
           <li className={getLinkClass('#about')}>
             <a href="#about" onClick={() => handleSectionClick('#about')}>About</a>
           </li>
+          <li
+            className={`relative ${['#partners', '#speakers', '#location', '#organizers'].includes(activeLink) ? 'active text-white' : 'text-gray-400'}`}
+            onClick={toggleDropdown}
+          >
+            <span>The Event</span>
+            <ArrowDropDownIcon />
+            {isDropdownOpen && (
+              <ul className="absolute left-0 mt-2 w-40 bg-black text-white shadow-lg rounded">
+                <li className={getLinkClass('#partners')}>
+                  <a href="#partners" onClick={() => handleSectionClick('#partners')}>Partners</a>
+                </li>
+                <li className={getLinkClass('#speakers')}>
+                  <a href="#speakers" onClick={() => handleSectionClick('#speakers')}>Speakers</a>
+                </li>
+                <li className={getLinkClass('#location')}>
+                  <a href="#location" onClick={() => handleSectionClick('#location')}>Location</a>
+                </li>
+                <li className={getLinkClass('#organizers')}>
+                  <a href="#organizers" onClick={() => handleSectionClick('#organizers')}>Organizers</a>
+                </li>
+              </ul>
+            )}
+          </li>
+          <li className={getLinkClass('#schedule')}>
+            <a href="#schedule" onClick={() => handleSectionClick('#schedule')}>Schedule</a>
+          </li>
           <li className={getLinkClass('/faq')}>
             <Link href="/faq">FAQ</Link>
+          </li>
+          <li className={getLinkClass('#register')}>
+            <Link href="https://www.eventbrite.com/e/catania-qiskit-fall-fest-tickets-1029219452087">Register</Link>
           </li>
         </ul>
       )}
